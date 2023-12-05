@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="title" content="Jung Tzen Liew's Page">
+        <meta name="author" content="Jung Tzen Liew">
+        <meta name="keywords" content="Resume, LinkedIn, GitHub, About Me, University of California San Diego">
+        <link rel="stylesheet" type="text/css" href="styles/style.css" media="screen">
+        <title>Jung Tzen Liew's HomePage</title>
+        <style>
+            body{
+                background-color: var(--background-color);
+                height: 100vh;
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
+            header{
+                text-align: center;
+            }
+
+            input[type="checkbox"]{
+                display: none;
+            }
+
+        </style>
+    </head>
+    <body>
+        <header id="homepage_header">
+            <h1 class="homepage_header">JUNG TZEN LIEW</h1>
+        </header>
+        <main class="homepage">
+            <div id="theme">
+                <label for="theme_switcher">
+                    <input type="checkbox" id="theme_switcher" onclick="themeButton()">
+                    <span class="theme_switch"></span>
+                </label>
+            </div>
+            
+            <h2 class="homepage_nav">
+                <a href="all_about_me.html" class="tab">ABOUT ME</a>
+                <a href="documents.html" class="tab">LET'S GET PROFESSIONAL</a>
+                <a href="contact.html" class="tab">CONTACT ME</a>
+            </h2>
+
+            <br>
+
+            <picture class="portrait">
+                <source srcset="/images/portrait/portrait.webp" type="image/webp" width="400" height="400">
+                <source srcset="/images/portrait/portrait.jpeg" type="image/jpeg" width="400" height="400">
+                <img src="/images/portrait/portrait.jpeg" alt="Missing image">
+            </picture>
+        </main>
+        <script src="scripts/script.js"></script>
+        <script src="scripts/theme.js"></script>
+    </body>
+</html>

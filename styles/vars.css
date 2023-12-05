@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@500&display=swap');
+
+:root {
+	--heading-size :     2em;
+	--subheading-size :  1.5em;
+	--body-size :        1.25em;
+    --spacing : 1.5;
+	--background-color : rgb(225, 242, 187);
+	--text-color :       black;
+	--heading-color :    #1d6723;
+	--hover-background-color: color-mix(in srgb, darkgreen, rgb(225, 242, 187) 50%);
+
+	--primary-color: darkgreen;
+	--secondary-color: mediumseagreen;
+	--text-color: black;
+	--form-and-about-me-text-color: white;
+	--background-color : rgb(225, 242, 187);
+
+	--light-primary-color: darkgreen;
+	--light-secondary-color: mediumseagreen;
+	--light-text-color: black;
+	--light-form-and-about-me-text-color: white;
+	--light-background-color : rgb(225, 242, 187);
+
+	--dark-primary-color: rgb(225, 242, 187);
+	--dark-secondary-color: mediumseagreen;
+	--dark-text-color: white;
+	--dark-form-and-about-me-text-color: black;
+	--dark-background-color : darkgreen;
+}
+
+/*
+	--tab-text-color: darkgreen;
+	--tab-border-color: darkgreen;
+	--border-color: darkgreen;
+	--resume-link: darkgreen;
+	--table-border-color: darkgreen;
+	--table-background-color: mediumseagreen;
+	--form-border-color: darkgreen;
+	--form-background-color: mediumseagreen;
+	--form-text-color: white;
+	--about-me-background: mediumseagreen;
+	--about-me-text-color: white;
+	--top-song-background-color: mediumseagreen;
+	--aside-background-color: darkgreen;
+*/

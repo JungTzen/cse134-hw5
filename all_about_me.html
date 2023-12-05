@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="title" content="Jung Tzen Liew's About Me">
+        <meta name="author" content="Jung Tzen Liew">
+        <meta name="keywords" content="About Me, University of California San Diego, Peanut Gallery">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="styles/style.css">
+        <style>
+            .top5 em{
+                color: var(--form-and-about-me-text-color);
+            }
+
+            h2{
+                color: var(--text-color);
+            }
+
+            strong{
+                color: var(--text-color);
+            }
+
+            input[type="checkbox"]{
+                display: none;
+            }
+        </style>
+        
+        <title>About Me</title>
+    </head>
+    <body>
+        <header class="header_container">
+
+            <div id="theme">
+                <label for="theme_switcher">
+                    <input type="checkbox" id="theme_switcher" onclick="themeButton()">
+                    <span class="theme_switch"></span>
+                </label>
+            </div>
+
+            <nav class="navigation">
+                <ul id="menu">
+                    <li><a href="index.html">HOMEPAGE</a></li>
+                    <li><a href="all_about_me.html" class="current_page">ABOUT ME</a></li>
+                    <li><a href="documents.html">LET'S GET PROFESSIONAL</a></li>
+                    <li><a href="contact.html">CONTACT ME</a></li>
+                </ul>
+            </nav>
+
+        </header>
+
+
+        <main class="main_container">
+            <br>
+            <section class="about_me_top">
+                <article class="all_about_me">
+                    <h2>Who is this guy?</h2>
+                    <strong>EDUCATION STATUS</strong> 
+                    <p>4th year Bioinformatics Major and Computer Science Minor at University of California San Diego</p>
+                    <strong>PLACE OF ORIGIN</strong> 
+                    <p>Born in Malaysia and immigrated to the Big Apple, otherwise known as New York City</p>
+                    <strong>LANGUAGES SPOKEN</strong>
+                        <p>Chinese &#40;Mandarin and Cantonese&#41;</p>
+                        <p>Spanish &#40;Limited Working Proficiency&#41;</p>
+                    <strong>FUN FACTS</strong>
+                        <p>I was a ballboy for the US Open.</p>
+                        <p>I once fed a buffalo wing to a shark.</p>
+                </article>
+
+                <picture class="placeholder_pic">
+                    <source srcset="/images/plants/plants.webp" type="image/webp" width="400" height="748">
+                    <source srcset="/images/plants/plants.jpg" type="image/jpg" width="400" height="748">
+                    <img src="/images/plants/plants.jpeg" alt="Picture Of A Shelf Filled With Plants.">
+                </picture>
+
+                <article class="my_current_music">
+                    <h2>What am I listening to?</h2>
+                    <div class="top5">
+                        <ul>
+                            <li><em>How Much is Weed?</em> by <strong>Dominic Fike</strong></li>
+                            <li><em>Valentina</em> by <strong>Daniel Caesar</strong></li>
+                            <li><em>How - demo</em> by <strong>Clairo</strong></li>
+                            <li><em>Right Here, for Now</em> by <strong>Bakar</strong></li>
+                            <li><em>Talk</em> by <strong>beabadoobee</strong></li>
+                        </ul>
+                    </div>
+                    <aside>Fun Fact: I've only started going to concerts last year and my first one was beabadoobee!</aside>
+                    <aside>Another Fun Fact: I host a radio show on campus called <em>The Peanut Gallery</em></aside>
+                </article>
+            </section>
+
+            <div class="spotify">
+                <aside>Here's one of the playlists I made for my radio show:</aside>
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/1FPI77k5kpwXdieQ1gKZaH?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+
+            <section class="photo_row">
+                <picture class="pic">
+                    <source srcset="/images/pic1/pic1.webp" type="image/webp">
+                    <source srcset="/images/pic1/pic1.jpg" type="image/jpg">
+                    <img src="/images/pic1/pic1.jpg" alt="Picture I Took Of Charlie Puth">
+                </picture>
+
+                <picture class="pic">
+                    <source srcset="/images/pic2/pic2.webp" type="image/webp">
+                    <source srcset="/images/pic2/pic2.jpg" type="image/jpg">
+                    <img src="/images/pic2/pic2.jpg" alt="Picture I Took Of beabadoobee">
+                </picture>
+
+                <picture class="pic">
+                    <source srcset="/images/pic4/pic4.webp" type="image/webp">
+                    <source srcset="/images/pic4/pic4.jpg" type="image/jpg">
+                    <img src="/images/pic4/pic4.jpg" alt="Picture I Took Of The Empire State Building">
+                </picture>
+
+                <picture class="pic">
+                    <source srcset="/images/pic3/pic3.webp" type="image/webp">
+                    <source srcset="/images/pic3/pic3.jpeg" type="image/jpg">
+                    <img src="/images/pic3/pic3.jpeg" alt="Picture I Took Of A Turtle">
+                </picture>
+            </section>
+        </main>
+        <script src="scripts/script.js"></script>
+        <script src="scripts/theme.js"></script>
+    </body>
+</html>

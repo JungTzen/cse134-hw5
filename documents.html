@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="title" content="Jung Tzen Liew's Portfolio">
+        <meta name="author" content="Jung Tzen Liew">
+        <meta name="keywords" content="Resume, LinkedIn, GitHub">
+        <link rel="stylesheet" type="text/css" href="styles/style.css">
+        <link rel="stylesheet" type="text/css" href="styles/vars.css">
+        <title>Professional Page</title>
+
+        <style>
+            input[type="checkbox"]{
+                display: none;
+            }
+        </style>
+
+    </head>
+    <body>
+        <header class="header_container">
+
+            <div id="theme">
+                <label for="theme_switcher">
+                    <input type="checkbox" id="theme_switcher" onclick="themeButton()">
+                    <span class="theme_switch"></span>
+                </label>
+            </div>
+
+            <nav class="navigation">
+                <ul id="menu">
+                    <li><a href="index.html">HOMEPAGE</a></li>
+                    <li><a href="all_about_me.html">ABOUT ME</a></li>
+                    <li><a href="documents.html" class="current_page">LET'S GET PROFESSIONAL</a></li>
+                    <li><a href="contact.html">CONTACT ME</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <br>
+            <section class="professional">
+                    <p class="summary_blurb">Proactive Bioinformatician and Data Analyst willing to take on any task with a positive attitude. 
+                        Skilled with strong problem-solving skills and a dedication to continuous learning while quickly 
+                        grasping new technologies and techniques to effectively contribute to team success. Strong interpersonal 
+                        skills and experienced in collaborating with executive management.</p>
+
+                    <picture class="portrait">
+                        <source srcset="/images/portrait/portrait.webp" type="image/webp" width="400" height="400">
+                        <source srcset="/images/portrait/portrait.jpeg" type="image/jpeg" width="400" height="400">
+                        <img src="/images/portrait/portrait.jpeg" alt="My LinkedIn Photo">
+                    </picture>
+                    <section class="links">
+                        <a class="resume_link" href="documents/Jung_Tzen_Liew_Resume.pdf" target="_blank">RESUME</a>
+                        <a class="linkedin" href="https://www.linkedin.com/in/jung-tzen-liew" target="_blank">
+                            <img src="images/linkedin_logo.png" alt="LinkedIn Logo" width="100">
+                        </a>
+                        <a class="github" href="https://github.com/JungTzen" target="_blank">
+                            <img src="images/github_logo.png" alt="GitHub Logo" width="100">
+                        </a>
+                        <a class="instagram" href="https://instagram.com/jung.0_0.tzen?utm_source=qr&igshid=MTB3OGVnM3k4YmRyeg==" target="_blank">
+                            <img src="images/instagram_logo.png" alt="Instagram Logo" width="100">
+                        </a>
+                    </section>
+            </section>
+
+            <section class="education">
+                <table class="relevant_skills">
+                    <caption><strong>RELEVANT COURSES</strong></caption>
+                    <colgroup>
+                        <col class="bioinfo">
+                        <col class="software_dev">
+                    </colgroup>
+                    <tr>
+                        <th>Bioinformatics</th>
+                        <th>Computer Science</th>
+                    </tr>
+                    <tr>
+                        <td>Applied Genomic Technologies</td>
+                        <td>Web Client Languages</td>
+                    </tr>
+                    <tr>
+                        <td>Advanced Bionformatics Lab</td>
+                        <td>Advanced Data Structures</td>
+                    </tr>
+                    <tr>
+                        <td>Genome Science</td>
+                        <td>Design and Analysis of Algorithms</td>
+                    </tr>
+                </table>
+            </section>
+        </main>
+        <script src="scripts/script.js"></script>
+        <script src="scripts/theme.js"></script>
+    </body>
+</html>
