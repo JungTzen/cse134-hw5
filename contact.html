@@ -13,6 +13,7 @@
             input[type="checkbox"]{
                 display: none;
             }
+
         </style>
 
     </head>
@@ -66,9 +67,24 @@
             <rating-widget>
                 <form action="https://httpbin.org/post" method="POST">
                     <label for="rating">How satisfied are you?</label>
+                    <div class="rating_sys">
+                        <input type="radio" id="5star" name="rating" value="5" required>
+                        <label for="5star">★</label>
+
+                        <input type="radio" id="4star" name="rating" value="4" required>
+                        <label for="5star">★</label>
+
+                        <input type="radio" id="3star" name="rating" value="3" required>
+                        <label for="5star">★</label>
+
+                        <input type="radio" id="2star" name="rating" value="2" required>
+                        <label for="5star">★</label>
+
+                        <input type="radio" id="1star" name="rating" value="1" required>
+                        <label for="5star">★</label>
+                    </div>
                     <input type="hidden" name="question" value="How satisfied are you?">
                     <input type="hidden" name="sentBy" value="HTML">
-                    <input type="number" id="rating" name="rating" min="1" max="5" value="0" required>
                     <button type="submit">Submit</button>
                 </form>
             </rating-widget>
@@ -79,66 +95,3 @@
         <script src="scripts/theme.js"></script>
     </body>
 </html>
-
-
-<!--
-                    <label for="outreach_input">HOW DID YOU FIND OUT ABOUT MY WEBSITE?</label>
-                    <input list="outreach_options" id="outreach_input">
-                    <datalist id="outreach_options">
-                        <option value="Friend"></option>
-                        <option value="Family"></option>
-                        <option value="LinkedIn"></option>
-                        <option value="Social Media"></option>
-                        <option value="Referral"></option>
-                        <option value="Other"></option>
-                    </datalist>
-                    <hr>
-
-                    <label for="animal">WHAT KIND OF ANIMAL DO YOU THINK YOU ARE?</label>
-                    <select id="animal">
-                        <optgroup label="Reptile">
-                            <option value="dino">Dinosaur</option>
-                            <option value="croc">Crocodile</option>
-                            <option value="lizard">Lizard</option>
-                            <option value="snake">Snake</option>
-                            <option value="turtle">Turtle</option>
-                        </optgroup>
-                        <optgroup label="Mammal">
-                            <option value="elephant">Elephant</option>
-                            <option value="big_cat">Big Cat</option>
-                            <option value="hippo">Hippo</option>
-                            <option value="dolphin">Dolphin</option>
-                            <option value="monkey">Monkey</option>
-                        </optgroup>
-                        <optgroup label="Bird">
-                            <option value="sparrow">Sparrow</option>
-                            <option value="pigeon">Pigeon</option>
-                            <option value="pelican">Pelican</option>
-                            <option value="parrot">Parrot</option>
-                            <option value="songbird">Songbird</option>
-                        </optgroup>
-                        <optgroup label="Amphibian">
-                            <option value="frog">Frog</option>
-                            <option value="toad">Toad</option>
-                            <option value="salamander">Salamander</option>
-                            <option value="newt">Newt</option>
-                            <option value="Axolotl">Axolotl</option>
-                        </optgroup>
-                        <optgroup label="Fish">
-                            <option value="shark">Shark</option>
-                            <option value="flounder">Flounder</option>
-                            <option value="salmon">Salmon</option>
-                            <option value="goldfish">Goldfish</option>
-                            <option value="sardine">Sardine</option>
-                        </optgroup>
-                        <optgroup label="Insect">
-                            <option value="ant">Ant</option>
-                            <option value="butterfly">Butterfly</option>
-                            <option value="beetle">Beetle</option>
-                            <option value="ladybug">Ladybug</option>
-                            <option value="bee">Bee</option>
-                        </optgroup>
-                        <option value="other">My animal was not here :&#40;</option>
-                    </select>
-
--->

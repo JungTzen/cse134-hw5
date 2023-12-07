@@ -389,6 +389,35 @@ td:hover {
     0%, 100% {opacity: 0; visibility: hidden;}
     15%, 85% {opacity: 1; visibility: visible;}
   }
+  
+  rating-widget label{
+    color: var(--text-color);
+    font-size: 25px;
+    cursor: pointer;
+    display: inline-block;
+    
+  }
+
+  input[type="radio"]{
+    display: none;
+  }
+
+  input[type="radio"]:checked ~ label{
+    display: none;
+  }
+  
+  label{
+    font-size: 30px;
+    cursor: pointer;
+  }
+
+  .rating_sys{
+    direction: rtl;
+    display: flex;
+    justify-content: center;
+  }
+
+  
 
 /* ================ 
     ABOUT ME 

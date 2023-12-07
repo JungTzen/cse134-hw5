@@ -130,3 +130,9 @@ form.addEventListener("submit", (event) => {
   .then(data => {document.write(`<pre>${JSON.stringify(data, null, 2)}</pre>`);})
   .catch(error => console.error('Error:', error));
 });
+
+document.querySelectorAll('.rating_sys input[type="radio"]').forEach(radio => {
+  radio.addEventListener('change', (event) => {
+      console.log(`Rating selected: ${event.target.value}`);
+  });
+});
