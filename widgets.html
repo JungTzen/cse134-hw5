@@ -32,39 +32,12 @@
                     <li><a href="index.html">HOMEPAGE</a></li>
                     <li><a href="all_about_me.html">ABOUT ME</a></li>
                     <li><a href="documents.html">LET'S GET PROFESSIONAL</a></li>
-                    <li><a href="contact.html" class="current_page">CONTACT ME</a></li>
-                    <li><a href="widgets.html">WIDGETS</a></li>
+                    <li><a href="contact.html">CONTACT ME</a></li>
+                    <li><a href="widgets.html" class="current_page">WIDGETS</a></li>
                 </ul>
             </nav>
         </header>
         <main>
-            <br>
-            <form class="suggestions" action="https://httpbin.org/post" method="POST">
-                <fieldset>                    
-                    <label for="form_name">WHAT'S YOUR NAME?</label>
-                    <input type="text" name="form_name" id="form_name" placeholder="Enter your name here..." pattern="[A-Za-z ]*" required><br>
-                    <output for="form_name" id="name_error"></output><br>
-                    <output for="form_name" id="name_info"></output><br>
-                
-                    <label for="email">WHAT'S YOUR EMAIL?</label>
-                    <input type="email" name="email" id="email" placeholder="example@gmail.com" required><span></span><br>
-                    <output for="email" id="email_error"></output><br>
-                    <output for="email" id="email_info"></output><br>
-                    
-                    <label for="comments">COMMENTS?</label>
-                    <textarea type="text" name="comments" id="comments" placeholder="Comments should only contain typical characters (letters, numbers, spaces, and . ? ! , ' +)" rows="5" maxlength="200" required></textarea>
-                    <output for="comments" id="comments_info"></output><br>
-                    <output for="comments" id="comments_error"></output><br>
-
-                    <label for="possible_bot"></label>
-                    <input type="hidden" name="possible_bot" id="possible_bot" value="true">
-                    <output for="possible_bot" id="possible_bot_error"></output>
-                    <output for="possible_bot" id="possible_bot_info"></output>
-
-                    <button class="submit" type="submit">SUBMIT</button>
-                </fieldset>
-            </form>
-
             <rating-widget max="5">
                 <form action="https://httpbin.org/post" method="POST">
                     <label for="rating">How satisfied are you?</label>
@@ -73,26 +46,25 @@
                         <label for="5star">★</label>
 
                         <input type="radio" id="4star" name="rating" value="4" required>
-                        <label for="5star">★</label>
+                        <label for="4star">★</label>
 
                         <input type="radio" id="3star" name="rating" value="3" required>
-                        <label for="5star">★</label>
+                        <label for="3star">★</label>
 
                         <input type="radio" id="2star" name="rating" value="2" required>
-                        <label for="5star">★</label>
+                        <label for="2star">★</label>
 
                         <input type="radio" id="1star" name="rating" value="1" required>
-                        <label for="5star">★</label>
+                        <label for="1star">★</label>
                     </div>
                     <input type="hidden" name="question" value="How satisfied are you?">
                     <input type="hidden" name="sentBy" value="HTML">
                     <button type="submit">Submit</button>
                 </form>
             </rating-widget>
-
-
         </main>
         <script src="scripts/script.js"></script>
         <script src="scripts/theme.js"></script>
+        <script src="scripts/widgets.js"></script>
     </body>
 </html>

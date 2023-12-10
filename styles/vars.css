@@ -27,6 +27,12 @@
 	--dark-text-color: white;
 	--dark-form-and-about-me-text-color: black;
 	--dark-background-color : darkgreen;
+
+	--star-unselected-color: black;
+	--star-selected-color: gold;
+
+	--light-star-unselected-color: black;
+	--dark-star-unselected-color: white;
 }
 
 /*

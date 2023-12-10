@@ -6,6 +6,7 @@ function themeSetter(theme){
       root.style.setProperty('--text-color','var(--light-text-color)');
       root.style.setProperty('--form-and-about-me-text-color','var(--light-form-and-about-me-text-color)');
       root.style.setProperty('--background-color','var(--light-background-color)');
+      root.style.setProperty('--star-unselected-color','var(--light-star-unselected-color)');
     }
     else{
       root.style.setProperty('--primary-color','var(--dark-primary-color)');
@@ -13,6 +14,7 @@ function themeSetter(theme){
       root.style.setProperty('--text-color','var(--dark-text-color)');
       root.style.setProperty('--form-and-about-me-text-color','var(--dark-form-and-about-me-text-color)');
       root.style.setProperty('--background-color','var(--dark-background-color)');
+      root.style.setProperty('--star-unselected-color','var(--dark-star-unselected-color)');
     }
 }
   

@@ -390,6 +390,16 @@ td:hover {
     15%, 85% {opacity: 1; visibility: visible;}
   }
   
+/* ================ 
+    Widgets 
+   ================ */
+
+  rating-widget{
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically if needed */
+  }
+
   rating-widget label{
     color: var(--text-color);
     font-size: 25px;
@@ -398,26 +408,31 @@ td:hover {
     
   }
 
-  input[type="radio"]{
-    display: none;
-  }
-
-  input[type="radio"]:checked ~ label{
-    display: none;
-  }
-  
-  label{
-    font-size: 30px;
-    cursor: pointer;
-  }
-
-  .rating_sys{
-    direction: rtl;
+  .rating_sys {
     display: flex;
-    justify-content: center;
-  }
+    flex-direction: row-reverse; /* Keep this to maintain the reverse order */
+    justify-content: center; /* Center the stars */
+}
 
-  
+.rating_sys input[type="radio"] {
+    display: none;
+}
+
+.rating_sys label {
+    color: var(--star-unselected-color, grey); /* Default color for unselected stars */
+    cursor: pointer;
+}
+
+/* Highlight the star when it's checked, and all stars before it */
+.rating_sys input[type="radio"]:checked ~ label {
+    color: var(--star-selected-color, gold); /* Color for selected stars */
+}
+
+.rating_sys label:hover{
+    color: gold;
+}
+
+
 
 /* ================ 
     ABOUT ME 
