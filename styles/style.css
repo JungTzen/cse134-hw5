@@ -401,38 +401,80 @@ td:hover {
   }
 
   rating-widget label{
-    color: var(--text-color);
+    color: var(--primary-color);
     font-size: 25px;
     cursor: pointer;
     display: inline-block;
     
   }
 
-  .rating_sys {
+  .rating_sys{
     display: flex;
     flex-direction: row-reverse; /* Keep this to maintain the reverse order */
     justify-content: center; /* Center the stars */
-}
-
-.rating_sys input[type="radio"] {
+    border: 5px solid var(--secondary-color);
+    background-color: var(--primary-color);
+    padding: 20px;
+    color: var(--form-text-color);
+    max-width: 600px; 
+    margin: 0 auto;
+  }
+  
+  .rating_sys input[type="radio"]{
     display: none;
-}
-
-.rating_sys label {
-    color: var(--star-unselected-color, grey); /* Default color for unselected stars */
+  }
+  
+  .rating_sys label {
+    color: var(--form-and-about-me-text-color, black);
     cursor: pointer;
-}
-
-/* Highlight the star when it's checked, and all stars before it */
-.rating_sys input[type="radio"]:checked ~ label {
-    color: var(--star-selected-color, gold); /* Color for selected stars */
-}
-
-.rating_sys label:hover{
+  }
+  
+  .rating_sys input[type="radio"]:checked ~ label {
+    color: var(--star-selected-color, gold);
+  }
+  
+  .rating_sys label:hover{
     color: gold;
-}
+  }
 
+  .rating_message {
+    color: var(--form-and-about-me-text-color);
+    border: 5px solid var(--secondary-color);
+    background-color: var(--primary-color);
+    padding: 20px;
+    max-width: 600px; 
+    margin: 10 auto;
+    font-weight: bold;
+  }
 
+  weather-widget{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+  }
+
+  .weather_text_header{
+    color: var(--primary-color);
+    text-decoration: underline;
+  }
+
+  .weather_text{
+    color: var(--primary-color);
+  }
+
+  .icons {
+    width: 60px; 
+    height: 60px; 
+    fill: var(--primary-color); 
+  }
+
+  .small_icons{
+    width: 20px;
+    height: 20px;
+    fill: var(--primary-color);
+  }
 
 /* ================ 
     ABOUT ME 
