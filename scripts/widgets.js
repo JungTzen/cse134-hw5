@@ -4,10 +4,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const ratingSys = document.querySelector('.rating_sys');
     const inputStar = ratingSys.querySelectorAll('input[type="radio"]');
     const maxRating = ratingWidget.getAttribute('max') || 5;
-    const latitude = '32.8801';
-    const longitude = '-117.234';
 
     //RATING WEB COMPONENT
+
+    //Hide submit button when JS is activated
     document.getElementById('submit_button').style.display = 'none';
 
     function handleStarSelection(ratingValue) {
@@ -20,12 +20,12 @@ document.addEventListener('DOMContentLoaded', function () {
         else {
             message = `Thanks for your feedback of ${ratingValue} stars. We will try to do better!`;
         }
-
         ratingWidget.innerHTML = `<p class="rating_message">${message}</p>`;
 
         const formData = new FormData(form);
         formData.append('sentBy', 'JS');
 
+        //Sends response to console
         fetch('https://httpbin.org/post', {
             method: 'POST',
             body: formData,
@@ -51,6 +51,8 @@ document.addEventListener('DOMContentLoaded', function () {
     
 
     //WEATHER WEB COMPONENT
+
+    // IDs for icons
     const iconMap = {
         "Cloudy": "cloudy",
         "Mostly Sunny": "sunny",
@@ -63,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     // Function to fetch grid location and then the forecast
-    function fetchForecast(latitude, longitude) {
+    function fetchForecast() {
         document.getElementById('weather_no_JS').style.display = 'none';
         const weather_url = `https://api.weather.gov/gridpoints/SGX/55,22/forecast`;
     
@@ -74,23 +76,21 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(forecastData => {
             const periods = forecastData.properties.periods;
             const today = new Date().toISOString().split('T')[0];
-            let forecastHTML = '<p class="weather_text_header"><strong>Today\'s Forecast</strong></p>';
+            let forecastHTML = '<p class="weather_text_header"><strong>Current Forecast</strong></p>';
             
-            // Today's Forecast
+            // Get Today's Forecast
             const todaysPeriods = periods.filter(period => period.startTime.split('T')[0] === today);
 
-            // Build the HTML
+            // Build the Weather Widget
             todaysPeriods.forEach(period => {
                 let iconId = iconMap[period.shortForecast] || "default";
-
-                console.log(period)
         
                 forecastHTML += `
                     <p class="weather_text">
                         <strong>${period.name}:</strong><br>
                         <svg class="icons"><use xlink:href="#${iconId}"></use></svg><br> 
-                        ${period.shortForecast}<br>
-                        ${period.temperature}°${period.temperatureUnit}<br> 
+                        ${period.shortForecast} ${period.temperature}°${period.temperatureUnit}<br><br>
+                        Humidity: ${period.relativeHumidity.value}%<br> 
                         <svg class="small_icons"><use xlink:href="#windy"></use></svg>${period.windSpeed} ${period.windDirection}
                     </p>
                     <hr>
@@ -107,6 +107,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
     
-    window.onload = () => fetchForecast(latitude, longitude);    
+    window.onload = () => fetchForecast();    
 });
 

@@ -455,13 +455,15 @@ td:hover {
     
   }
 
+  #weather_no_JS, .weather_text{
+    color: var(--primary-color);
+    font-weight: bold;
+  }
+
   .weather_text_header{
     color: var(--primary-color);
     text-decoration: underline;
-  }
-
-  .weather_text{
-    color: var(--primary-color);
+    font-size: x-large;
   }
 
   .icons {
