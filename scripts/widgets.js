@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const form = ratingWidget.querySelector('form');
     const ratingSys = document.querySelector('.rating_sys');
     const inputStar = ratingSys.querySelectorAll('input[type="radio"]');
-    const maxRating = ratingWidget.getAttribute('max') || 5;
+    const maxRating = ratingWidget.getAttribute('max');
 
     //RATING WEB COMPONENT
 
@@ -35,8 +35,8 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .then(response => response.json())
         .then(data => {
-            console.log('Response:', data);
-            textContent = JSON.stringify(data, null, 2);
+            encoded = JSON.stringify(data, null, 2);
+            console.log(encoded);
         })
         .catch(error => {
             console.error('Error:', error);
@@ -74,18 +74,20 @@ document.addEventListener('DOMContentLoaded', function () {
             return response.json();
         })
         .then(forecastData => {
+            console.log(forecastData.properties)
             const periods = forecastData.properties.periods;
             const today = new Date().toISOString().split('T')[0];
-            let forecastHTML = '<p class="weather_text_header"><strong>Current Forecast</strong></p>';
+            let forecast = '<p class="weather_text_header"><strong>Current Forecast</strong></p>';
             
             // Get Today's Forecast
-            const todaysPeriods = periods.filter(period => period.startTime.split('T')[0] === today);
+            const currentForecast = periods.filter(period => period.startTime.split('T')[0] === today);
 
             // Build the Weather Widget
-            todaysPeriods.forEach(period => {
+            currentForecast.forEach(period => {
+                console.log(period)
                 let iconId = iconMap[period.shortForecast] || "default";
         
-                forecastHTML += `
+                forecast += `
                     <p class="weather_text">
                         <strong>${period.name}:</strong><br>
                         <svg class="icons"><use xlink:href="#${iconId}"></use></svg><br> 
@@ -97,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 `;
             });
 
-            document.getElementById('weather_updates').innerHTML = forecastHTML;
+            document.getElementById('weather_updates').innerHTML = forecast;
             document.getElementById('weather_updates').style.display = 'block';
         })
         .catch(error => {
