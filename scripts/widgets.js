@@ -61,7 +61,10 @@ document.addEventListener('DOMContentLoaded', function () {
         "Partly Cloudy": "partly-cloudy",
         "Rain": "rain",
         "Thunderstorm": "thunderstorm",
-        "Patchy Fog": "fog"
+        "Patchy Fog": "fog",
+        "Partly Cloudy then Patchy Fog": "cloudy",
+        "Patchy Fog then Mostly Sunny": "sunny",
+        "Patchy Fog then Partly Cloudy": "fog",
     };
 
     // Function to fetch grid location and then the forecast
@@ -130,4 +133,3 @@ document.addEventListener('DOMContentLoaded', function () {
     
     window.onload = () => fetchForecast();    
 });
-
