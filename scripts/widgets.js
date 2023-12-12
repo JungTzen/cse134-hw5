@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     //Hide submit button when JS is activated
     document.getElementById('submit_button').style.display = 'none';
 
-    function handleStarSelection(ratingValue) {
+    function starRating(ratingValue) {
         const ratingPercentage = (ratingValue / maxRating) * 100;
         let message = '';
 
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     inputStar.forEach(star => {
         star.addEventListener('change', () => {
-            handleStarSelection(star.value);
+            starRating(star.value);
         });
     });
     
@@ -76,17 +76,36 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(forecastData => {
             console.log(forecastData.properties)
             const periods = forecastData.properties.periods;
-            const today = new Date().toISOString().split('T')[0];
+            const today = new Date().toLocaleString("en-US",{timeZone: "America/Los_Angeles"})
+            console.log(today)
+
+            const current_date = new Date(today);
+            const string_curr_date = current_date.getFullYear() + '-' + ('0' + (current_date.getMonth() + 1)).slice(-2) + '-' + ('0' + current_date.getDate()).slice(-2);
+            //today = today.toISOString().split('T')[0];
+
             let forecast = '<p class="weather_text_header"><strong>Current Forecast</strong></p>';
-            
-            // Get Today's Forecast
-            const currentForecast = periods.filter(period => period.startTime.split('T')[0] === today);
+            let nextDayForecast = false;
 
             // Build the Weather Widget
-            currentForecast.forEach(period => {
+            for (let i = 0; i < Math.min(2, periods.length); i++) {
+                const period = periods[i];
                 console.log(period)
+
+                if(!nextDayForecast && period.startTime.split('T')[0] !== string_curr_date){
+                    forecast += '<p class="weather_text_header"><strong>Upcoming Forecast</strong></p>';
+                    nextDayForecast = true;
+                    console.log("Date: ", period.startTime.split('T')[0])
+                }
+
                 let iconId = iconMap[period.shortForecast] || "default";
         
+                if(period.isDaytime){
+                    iconId = iconMap[period.shortForecast] || "sunny";
+                }
+                else{
+                    iconId = iconMap[period.shortForecast] || "night-clear";
+                }
+
                 forecast += `
                     <p class="weather_text">
                         <strong>${period.name}:</strong><br>
@@ -97,7 +116,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     </p>
                     <hr>
                 `;
-            });
+            };
 
             document.getElementById('weather_updates').innerHTML = forecast;
             document.getElementById('weather_updates').style.display = 'block';
